@@ -18,7 +18,7 @@ const messages = {
         required: "Please select a query type"
     },
     consentCheckBox: {
-        required: "Please select a query type"
+        required: "To submit this form, please consent to being contacted"
     },
 }
 const patterns = {
@@ -30,7 +30,11 @@ const patterns = {
 
 const nameValidation = {
     required: messages.name.required,
-    patterns: {
+    minLength: {
+        value: 3,
+        message: "Name must be at least 3 characters"
+      },
+    pattern: {
         value: patterns.onlyLetters,
         message: messages.name.wrong
     }
@@ -38,7 +42,11 @@ const nameValidation = {
 
 const lastnameValidation = {
     required: messages.lastname.required,
-    patterns: {
+    minLength: {
+        value: 2,
+        message: "Last Name must be at least 3 characters"
+      },
+    pattern: {
         value: patterns.onlyLetters,
         message: messages.lastname.wrong
     }
@@ -46,7 +54,7 @@ const lastnameValidation = {
 
 const emailValidation = {
     required: messages.email.required,
-    patterns: {
+    pattern: {
         value: patterns.mustContainAt,
         message: messages.email.wrong
     }
@@ -65,7 +73,7 @@ const consentCheckBoxValidation = {
 }
 
 export const FORM_VALIDATION = {
-    FIRSTNAME: nameValidation,
+    NAME: nameValidation,
     LASTNAME: lastnameValidation,
     EMAIL: emailValidation,
     QUERYTYPE: queryTypeValidation,
