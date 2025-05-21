@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { FORM_VALIDATION } from "../../constants/form_validation";
-import { StyledButton, StyledCheckBoxDiv, StyledFieldDiv, StyledFormContainer, StyledInputRadioDiv, StyledInputTextField, StyledLabel, StyledMainDivForm, StyledRadio, StyledTextAreaBox } from "./styles-form";
+import { StyledButton, StyledCheckbox, StyledCheckBoxDiv, StyledCheckboxLabel, StyledFieldDiv, StyledFormContainer, StyledInputRadioDiv, StyledInputTextField, StyledLabel, StyledMainDivForm, StyledRadio, StyledRadioLabel, StyledTextAreaBox } from "./styles-form";
 
 const Form = () => {
   const { handleSubmit, register, formState: { errors } } = useForm();
@@ -48,26 +48,24 @@ const Form = () => {
  <StyledFieldDiv>
         <StyledLabel>Query Type *</StyledLabel>
         <StyledInputRadioDiv>
-          <label>
+          <StyledRadioLabel>
             <StyledRadio
               type="radio"
               value="general"
-              $hasError={errors.name}
               {...register("queryType", FORM_VALIDATION.QUERYTYPE)}
             />
             General Enquiry
-          </label>
+            </StyledRadioLabel>
           </StyledInputRadioDiv>
           <StyledInputRadioDiv>
-          <label>
+          <StyledRadioLabel>
             <input
               type="radio"
               value="support"
-              $hasError={errors.name}
               {...register("queryType", FORM_VALIDATION.QUERYTYPE)} 
             />
             Support Request
-          </label>
+            </StyledRadioLabel>
           </StyledInputRadioDiv>
         {errors.queryType && <p>{errors.queryType.message}</p>}
         </StyledFieldDiv>
@@ -86,14 +84,14 @@ const Form = () => {
       
  {/* Checkbox: Consent */}
   <StyledCheckBoxDiv>
-        <input
+    <StyledCheckbox
             type="checkbox"
             $hasError={errors.name}
             {...register("consentCheckBox", FORM_VALIDATION.CONSENTCHECKBOX)} 
           />
-        <StyledLabel>
-         I consent to being contacted by the team*
-         </StyledLabel>
+        < StyledCheckboxLabel
+         $hasError={errors.name} />
+        I consent to being contacted by the team*
         </StyledCheckBoxDiv>
         {errors.consentCheckBox && <p>{errors.consentCheckBox.message}</p>}
 

@@ -58,14 +58,41 @@ const StyledInputRadioDiv = styled.div`
   border-radius: 8px;
   border: 1px solid ${({ $hasError }) => ($hasError ? COLORS.wrongState : COLORS.defaultState)};
 
-  &:checked + label{
-  background: ${COLORS.selectedRadio}
+  input[type="radio"] {
+    display: none;
+  }
+
+  input[type="radio"]:checked + label {
+    background-color: ${COLORS.selectedRadio};
+    border-color: ${COLORS.selectedState};
+  }
  }
 `
+const StyledRadioLabel = styled.label`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  transition: background-color 0.3s ease;
+
+  &::before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    border: 2px solid ${COLORS.defaultState};
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+  }
+
+  input[type="radio"]:checked + &::before {
+    border-color: ${COLORS.selectedState};
+    background-color: ${COLORS.selectedState};
+    box-shadow: inset 0 0 0 4px white;
+  }
+`;
+
 const StyledRadio = styled.input`
- width: 24px;
- height: 24px; 
- border: 1px solid ${COLORS.defaultState};
 `
 
 const StyledTextAreaBox = styled.textarea`
@@ -81,12 +108,37 @@ display: flex;
   border: 1px solid ${({ $hasError }) => ($hasError ? COLORS.wrongState : COLORS.defaultState)};
   border-radius: 8px;
 `
+
 const StyledCheckBoxDiv = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
   align-self: stretch;
   `
+  const StyledCheckbox = styled.input`
+    width: 24px;
+    height: 24px;
+  `
+  
+  const StyledCheckboxLabel = styled.label`
+  position: relative;
+  padding-left: 40px;
+  cursor: pointer;
+  user-select: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: 2px solid ${({ $hasError }) => ($hasError ? COLORS.wrongState : COLORS.defaultState)};
+}
+`
+
   const StyledButton = styled.button`
   display: flex;
   padding: 16px 40px;
@@ -107,4 +159,4 @@ const StyledCheckBoxDiv = styled.div`
   }
 `
 
-export { StyledMainDivForm, StyledFormContainer, StyledFieldDiv,StyledLabel, StyledInputTextField, StyledInputRadioDiv, StyledRadio,StyledTextAreaBox,StyledCheckBoxDiv, StyledButton }
+export { StyledMainDivForm, StyledFormContainer, StyledFieldDiv,StyledLabel, StyledInputTextField, StyledInputRadioDiv,StyledRadioLabel , StyledRadio,StyledTextAreaBox,StyledCheckBoxDiv, StyledCheckbox,StyledCheckboxLabel, StyledButton }
