@@ -115,28 +115,10 @@ const StyledCheckBoxDiv = styled.div`
   gap: 16px;
   align-self: stretch;
   `
+  
   const StyledCheckbox = styled.input`
     width: 24px;
     height: 24px;
-  `
-  
-  const StyledCheckboxLabel = styled.label`
-  position: relative;
-  padding-left: 40px;
-  cursor: pointer;
-  user-select: none;
-
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 24px;
-    height: 24px;
-    border-radius: 4px;
-    border: 2px solid ${({ $hasError }) => ($hasError ? COLORS.wrongState : COLORS.defaultState)};
-}
 `
 
   const StyledButton = styled.button`
@@ -159,4 +141,4 @@ const StyledCheckBoxDiv = styled.div`
   }
 `
 
-export { StyledMainDivForm, StyledFormContainer, StyledFieldDiv,StyledLabel, StyledInputTextField, StyledInputRadioDiv,StyledRadioLabel , StyledRadio,StyledTextAreaBox,StyledCheckBoxDiv, StyledCheckbox,StyledCheckboxLabel, StyledButton }
+export { StyledMainDivForm, StyledFormContainer, StyledFieldDiv,StyledLabel, StyledInputTextField, StyledInputRadioDiv,StyledRadioLabel , StyledRadio,StyledTextAreaBox,StyledCheckBoxDiv, StyledCheckbox, StyledButton }

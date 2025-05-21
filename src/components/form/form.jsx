@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { FORM_VALIDATION } from "../../constants/form_validation";
-import { StyledButton, StyledCheckbox, StyledCheckBoxDiv, StyledCheckboxLabel, StyledFieldDiv, StyledFormContainer, StyledInputRadioDiv, StyledInputTextField, StyledLabel, StyledMainDivForm, StyledRadio, StyledRadioLabel, StyledTextAreaBox } from "./styles-form";
+import { StyledButton, StyledCheckbox, StyledCheckBoxDiv, StyledFieldDiv, StyledFormContainer, StyledInputRadioDiv, StyledInputTextField, StyledLabel, StyledMainDivForm, StyledRadio, StyledRadioLabel, StyledTextAreaBox } from "./styles-form";
 
 const Form = () => {
   const { handleSubmit, register, formState: { errors } } = useForm();
@@ -89,9 +89,7 @@ const Form = () => {
             $hasError={errors.name}
             {...register("consentCheckBox", FORM_VALIDATION.CONSENTCHECKBOX)} 
           />
-        < StyledCheckboxLabel
-         $hasError={errors.name} />
-        I consent to being contacted by the team*
+             <StyledLabel> I consent to being contacted by the team *</StyledLabel>
         </StyledCheckBoxDiv>
         {errors.consentCheckBox && <p>{errors.consentCheckBox.message}</p>}
 
