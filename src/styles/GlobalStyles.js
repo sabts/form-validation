@@ -31,5 +31,6 @@ body {
   margin: 0;
   font-family: sans-serif;
   background:  #E0F1E8;
+  padding:32px 16px
 }
 `;
