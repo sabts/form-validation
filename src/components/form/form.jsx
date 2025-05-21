@@ -9,8 +9,13 @@ const Form = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <label htmlFor="name">
           {" "}
-          Name*
-          <input type="text" id="name" name="name" />
+          First Name*
+          <input
+            type="text"
+            id="name"
+            name="name"
+            {...register("name, FORM_VALIDATIONS.NAME")}
+          />
         </label>
       </form>
     </>
