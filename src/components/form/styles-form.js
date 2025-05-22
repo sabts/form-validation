@@ -15,21 +15,21 @@ const StyledFormContainer = styled.form`
   display: flex;
   flex-direction: column;
   gap: 24px;
-  `
-  const StyledFieldDiv = styled.div`
+`;
+const StyledFieldDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
   font-size: 1rem;
   line-height: 150%;
-`
+`;
 const StyledLabel = styled.label`
   color: ${COLORS.primaryTextColor};
   font-size: 1rem;
-  `
-  
-  const StyledInputTextField = styled.input`
+`;
+
+const StyledInputTextField = styled.input`
   display: flex;
   width: 100%;
   align-self: stretch;
@@ -38,15 +38,16 @@ const StyledLabel = styled.label`
   gap: 16px;
   align-self: stretch;
   border-radius: 8px;
-  border: 1px solid ${({ $hasError }) => ($hasError ? COLORS.wrongState : COLORS.defaultState)};
-  font-size: 1.125rem
-  color: ${COLORS.primaryTextColor}
+  border: 1px solid
+    ${({ $hasError }) => ($hasError ? COLORS.wrongState : COLORS.defaultState)};
+  font-size: 1.125rem;
+  color: ${COLORS.primaryTextColor};
 
- &:focus {
-  border-color: ${COLORS.selectedState};
-  outline: none; 
-}
-`
+  &:focus {
+    border: 2px solid ${COLORS.selectedState};
+    outline: none;
+  }
+`;
 const StyledInputRadioDiv = styled.div`
   display: flex;
   width: 100%;
@@ -56,47 +57,18 @@ const StyledInputRadioDiv = styled.div`
   gap: 20px;
   align-self: stretch;
   border-radius: 8px;
-  border: 1px solid ${({ $hasError }) => ($hasError ? COLORS.wrongState : COLORS.defaultState)};
-
-  input[type="radio"] {
-    display: none;
-  }
-
-  input[type="radio"]:checked + label {
-    background-color: ${COLORS.selectedRadio};
-    border-color: ${COLORS.selectedState};
-  }
- }
-`
-const StyledRadioLabel = styled.label`
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 20px;
-  transition: background-color 0.3s ease;
-
-  &::before {
-    content: "";
-    width: 24px;
-    height: 24px;
-    border: 2px solid ${COLORS.defaultState};
-    border-radius: 50%;
-    display: inline-block;
-    position: relative;
-  }
-
-  input[type="radio"]:checked + &::before {
-    border-color: ${COLORS.selectedState};
-    background-color: ${COLORS.selectedState};
-    box-shadow: inset 0 0 0 4px white;
-  }
+  border: 1px solid
+    ${({ $hasError }) => ($hasError ? COLORS.wrongState : COLORS.defaultState)};
 `;
 
 const StyledRadio = styled.input`
-`
+  width: 24px;
+  height: 24px;
+  accent-color: ${COLORS.selectedState};
+`;
 
 const StyledTextAreaBox = styled.textarea`
-display: flex;
+  display: flex;
   width: 100%;
   height: 240px;
   align-self: stretch;
@@ -105,23 +77,25 @@ display: flex;
   gap: 16px;
   font-size: 1.125rem;
   color: ${COLORS.primaryTextColor};
-  border: 1px solid ${({ $hasError }) => ($hasError ? COLORS.wrongState : COLORS.defaultState)};
+  border: 1px solid
+    ${({ $hasError }) => ($hasError ? COLORS.wrongState : COLORS.defaultState)};
   border-radius: 8px;
-`
+`;
 
 const StyledCheckBoxDiv = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
   align-self: stretch;
-  `
-  
-  const StyledCheckbox = styled.input`
-    width: 24px;
-    height: 24px;
-`
+`;
 
-  const StyledButton = styled.button`
+const StyledCheckbox = styled.input`
+  width: 24px;
+  height: 24px;
+  accent-color: ${COLORS.selectedState};
+`;
+
+const StyledButton = styled.button`
   display: flex;
   padding: 16px 40px;
   justify-content: center;
@@ -136,9 +110,21 @@ const StyledCheckBoxDiv = styled.div`
   line-height: 150%;
   border: none;
 
-  &:hover{
-  background: #0C7D69;
+  &:hover {
+    background: #0c7d69;
   }
-`
+`;
 
-export { StyledMainDivForm, StyledFormContainer, StyledFieldDiv,StyledLabel, StyledInputTextField, StyledInputRadioDiv,StyledRadioLabel , StyledRadio,StyledTextAreaBox,StyledCheckBoxDiv, StyledCheckbox, StyledButton }
+export {
+  StyledMainDivForm,
+  StyledFormContainer,
+  StyledFieldDiv,
+  StyledLabel,
+  StyledInputTextField,
+  StyledInputRadioDiv,
+  StyledRadio,
+  StyledTextAreaBox,
+  StyledCheckBoxDiv,
+  StyledCheckbox,
+  StyledButton,
+};
